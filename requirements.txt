@@ -1,0 +1,7 @@
+selenium
+beautifulsoup4
+pandas
+scikit-learn
+tensorflow
+streamlit
+streamlit-shadcn-ui
