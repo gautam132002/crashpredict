@@ -59,6 +59,8 @@
 
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
 from bs4 import BeautifulSoup
 import json
 import pandas as pd
@@ -78,8 +80,8 @@ def fetch_and_display_html(url):
     try:
         options = Options()
         options.headless = True
-        firefox_path = 'geckodriver'
-        browser = webdriver.Firefox(executable_path=firefox_path, options=options)
+        service = Service(GeckoDriverManager().install())  # Use GeckoDriverManager to get the path dynamically
+        browser = webdriver.Firefox(service=service, options=options)
         browser.get(url)
 
         browser.implicitly_wait(10)
@@ -90,7 +92,8 @@ def fetch_and_display_html(url):
     except Exception as e:
         print(f"Error: {str(e)}")
     finally:
-        browser.quit()
+        if browser:
+            browser.quit()
 
 def extract_json_from_html(html_source):
     soup = BeautifulSoup(html_source, 'html.parser')
@@ -111,7 +114,4 @@ def process_and_save_to_csv(json_data, filename):
     else:
         print("Error: No JSON data to process and save")
 
-if __name__ == "__main__":
-    x = main()
-    print(x)
 
