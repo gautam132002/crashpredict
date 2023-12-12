@@ -2,7 +2,7 @@
 ![CrashPredict](https://github.com/gautam132002/crashpredict/assets/68372911/7453463d-cab7-49c9-acbc-b51d4270f4c7)
 
 
-Welcome to the Crash Predict dashboard, your go-to tool for predicting and playing safe CRASH GAME on the [duelbets.com](https://duelbits.com/) website. This Python-based bot leverages advanced AI models, namely Crash RNN and Crash CNN, to analyze data and provide insights to enhance your gaming experience.
+Welcome to the Crash Predict dashboard, your go-to tool for predicting and playing safe CRASH GAME on [duelbets.com](https://duelbits.com/). This Python-based bot leverages advanced AI models, namely Crash RNN and Crash CNN, to analyze data and provide insights to enhance your gaming experience.
 
 ## Install / Setup
 
